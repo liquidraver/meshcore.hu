@@ -15,8 +15,8 @@ A **Companion** a leggyakoribb firmware-típus: az eszköz Bluetooth-on (vagy US
 
 ## Beállítás
 
-*(Ide jön a részletes beállítási útmutató — képekkel.)*
+*(Ide jön majd a részletes beállítási útmutató — képekkel.)*
 
 ## Tippek
 
-*(Ide jönnek a közösségi tapasztalatok.)*
+*(Ide jönnek majd a közösségi tapasztalatok.)*

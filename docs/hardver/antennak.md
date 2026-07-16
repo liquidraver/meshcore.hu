@@ -14,4 +14,4 @@ A jó antenna többet számít, mint az erős adó!
 - 868 MHz-re hangolt antennát használj
 - A magasság a legfontosabb: minél magasabban van az antenna, annál messzebbre látsz
 
-*(Ide jönnek a közösség által bevált antennatípusok és beszerzési források.)*
+*(Ide jönnek később a közösség által bevált antennatípusok és beszerzési források.)*

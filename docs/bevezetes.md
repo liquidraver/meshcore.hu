@@ -10,17 +10,17 @@ description: Mi az a MeshCore és miért érdemes csatlakozni a magyar mesh hál
 
 ## Mi az a MeshCore?
 
-A [MeshCore](https://meshcore.co.uk) egy **LoRa-alapú, decentralizált kommunikációs rendszer**, amely internet nélkül teszi lehetővé az üzenetküldést. A hálózat csomópontokból (node-okból) áll, amelyek továbbítják egymás üzeneteit, így nagy távolságok is áthidalhatók.
+A [MeshCore](https://meshcore.io) egy **LoRa-alapú, decentralizált kommunikációs rendszer**, amely internet nélkül teszi lehetővé az üzenetküldést. A hálózat "ismétlőkből" (repeater) és "társeszközökből" (compnaion) áll, amelyek továbbítják és fogadják egymás üzeneteit, így nagy távolságok is áthidalhatók.
 
 ## Miért jó ez nekem?
 
-- 📡 **Internet nélkül működik** — áramszünet vagy hálózatkimaradás esetén is
-- 🔒 **Titkosított** — az üzenetek végpontok között titkosítottak
+- 📡 **Internet nélkül működik** — áramszünet vagy hálózatkimaradás esetén is (napelemes ismétlőkkel)
+- 🔒 **Titkosított** — az üzenetek végpontok között titkosítottak (nyilvános csatornákon nem!)
 - 💸 **Nincs előfizetés** — csak egy olcsó LoRa-eszköz kell hozzá
-- 🥾 **Túrázáshoz, katasztrófavédelemhez, közösségi hálózatokhoz** egyaránt hasznos
+- 🥾 **Túrázáshoz, katasztrófavédelemhez, közösségi hálózatokhoz** egyaránt hasznos lehet
 
 ## Hogyan tovább?
 
 1. Olvasd el a [Gyors kezdés](gyors-kezdes.md) útmutatót
 2. Válassz eszközt a [Hardver](hardver/eszkozok.md) oldalon
-3. Nézd meg a magyar hálózat lefedettségét az [mc868.hu](https://mc868.hu) térképén
+3. Nézd meg a magyar hálózat lefedettségét a [meshcore.hu](https://map.meshcore.hu/#/map) térképén

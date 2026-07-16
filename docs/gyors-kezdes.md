@@ -16,6 +16,17 @@ A legnépszerűbb belépő szintű eszközök (részletek a [Hardver](hardver/es
 |---|---|---|
 | Heltec V3 | ~10 000 Ft | Olcsó, kijelzős |
 | RAK4631 | ~15 000 Ft | Kiváló energiahatékonyság |
+
+Ajánlott eszközök kezdőknek:
+| Eszköz | Ár (kb.) | Megjegyzés |
+|---|---|---|
+| Wio Tracker L1 Pro | ~17 000 Ft | Kijelzős, nagy akksival, külső antennás |
+| RAK WisMesh Tag | ~15 000 Ft | Könnyen hordozható, de kisebb akksi és belső antenna |
+
+
+Haladóbb szintű, de önálló , telefon nélküli működésre képes eszköz:
+| Eszköz | Ár (kb.) | Megjegyzés |
+|---|---|---|
 | T-Deck | ~25 000 Ft | Billentyűzettel, önálló használatra |
 
 :::tip Fontos
@@ -24,10 +35,11 @@ Magyarországon a **868 MHz-es** frekvenciasávot használjuk! Vásárláskor mi
 
 ## 2. Töltsd fel a firmware-t
 
-1. Nyisd meg a [MeshCore web flashert](https://flasher.meshcore.co.uk) Chrome vagy Edge böngészőben
+1. Nyisd meg a [MeshCore web flashert](https://flasher.meshcore.io) Chrome vagy Edge böngészőben
 2. Csatlakoztasd az eszközt USB-n
 3. Válaszd ki az eszköztípust és a **Companion** firmware-t
-4. Kattints a *Flash* gombra
+4. Első telepítésnél érdemes az "erase flash"-el kezdeni
+5. Kattints a *Flash* gombra
 
 ## 3. Telepítsd az alkalmazást
 
@@ -37,9 +49,10 @@ Magyarországon a **868 MHz-es** frekvenciasávot használjuk! Vásárláskor mi
 ## 4. Csatlakozz és küldj üzenetet
 
 1. Nyisd meg az appot, párosítsd az eszközt Bluetooth-on
-2. Állítsd be a nevedet (callsign)
-3. Ellenőrizd a régiót: **EU 868 MHz**
+2. Állítsd be a nevedet
+3. Ellenőrizd a régiót: EU/UK Narrow
 4. Küldd el az első üzenetedet a publikus csatornán! 👋
+5. Vedd fel a [#hungary](meshcore://channel/add?name=%23hungary&secret=d2ad7e4009b727fb4ee5c1ff51694e5e) csatornát a helyi közösségi chateléshez
 
 ## Hogyan tovább?
 

@@ -35,7 +35,7 @@ const socials = [
   {name: 'Telegram', href: 'https://t.me/meshcore_hu', icon: '/img/telegram.svg'},
   {name: 'Discord', href: 'https://discord.gg/meshcore', icon: '/img/discord.svg'},
   {name: 'Facebook', href: 'https://facebook.com/meshcore.hu', icon: '/img/facebook.svg'},
-  {name: 'GitHub', href: 'https://github.com/meshcore-hu', icon: '/img/github.svg'},
+  {name: 'GitHub', href: 'https://github.com/meshcore-dev', icon: '/img/github.svg'},
   {name: 'YouTube', href: 'https://youtube.com/@meshcore_hu', icon: '/img/youtube.svg'},
 ];
 
@@ -57,7 +57,7 @@ function HomepageHeader() {
           </Link>
           <Link
             className="button button--outline button--secondary button--lg"
-            href="https://mc868.hu">
+            href="https://map.meshcore.hu/#/live">
             Megnézem az élő térképet
           </Link>
         </div>

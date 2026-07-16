@@ -16,7 +16,7 @@ az angol eredeti a mérvadó.
 
 ### Mi az a MeshCore?
 
-A MeshCore egy könnyűsúlyú, hibrid útvonalválasztású mesh protokoll LoRa
+A MeshCore egy egyszerű, hibrid útvonalválasztású mesh protokoll LoRa
 packet-rádiókhoz. Internet és mobilhálózat nélkül tesz lehetővé titkosított
 üzenetküldést: a csomópontok továbbítják egymás csomagjait, így nagy területek
 is lefedhetők. Nyílt forráskódú (MIT licenc).
@@ -32,10 +32,10 @@ Companion firmware, és a MeshCore alkalmazás a telefonodra. Részletek:
 ### Hány eszköz kell a kezdéshez?
 
 Egyetlen eszközzel már tudsz csatlakozni egy meglévő hálózathoz (például a
-magyar meshhez — lefedettség: [mc868.hu](https://mc868.hu)). Ha a környékeden
-még nincs hálózat, legalább két eszköz kell, hogy legyen kivel kommunikálni.
+magyar mesh-hez). Ha a környékeden
+még nincs ismétlő, legalább két eszköz kellhet, hogy legyen kivel kommunikálni. (ismétlő egy magas ponton a közelben)
 
-### Kerül pénzbe a MeshCore?
+### Pénzbe kerül a MeshCore?
 
 Nem. A firmware és az alkalmazások ingyenesek, előfizetés nincs — csak az
 eszközök árával kell számolni. (Az appok kínálnak opcionális támogatói
@@ -43,194 +43,40 @@ vásárlásokat, amivel a fejlesztést segítheted.)
 
 ### Milyen frekvenciákat támogat a MeshCore?
 
-✍️ *Kidolgozandó — [eredeti válasz](https://docs.meshcore.io/faq/#23-q-what-frequencies-are-supported-by-meshcore).*
 **Magyarországon a 868 MHz-es (EU868) sávot használjuk.**
+Eszközvásárlásnál a "868" verziót kell keresni.
+
+**A 433-as sávon is találhatsz ismétlőket pár kísérletező kedvű felhasználó által.**
 
 ### Mi az az „advert"?
 
-✍️ *Kidolgozandó — röviden: az advert a csomópont önhirdető csomagja, ezzel
-tudatja a hálózattal, hogy létezik, és így kerül fel mások kapcsolatlistájára.*
+Röviden: az advert a csomópont önhirdető csomagja, ezzel tudatja a hálózattal, hogy létezik, és így kerül fel mások kapcsolatlistájára.
+
+Advertet küldeni nem kötelező, más csatornákon is megosztható az azonosítónk a másik féllel.
+Egymás kapcsolatlistájában fel kell venni a másik fleet hogy direkt, titkosított üzenetváltást kezdeményezhessünk.
 
 ### Van hop-limit (ugráskorlát)?
 
-✍️ *Kidolgozandó — [eredeti válasz](https://docs.meshcore.io/faq/#25-q-is-there-a-hop-limit).*
-
-## 3. Repeater és Room Server üzemeltetés
-
-### Hogyan konfigurálok repeatert vagy room servert?
-
-✍️ *Kidolgozandó — lásd: [Repeater](firmware/repeater.md), [Room Server](firmware/room-server.md).*
-
-### Be kell állítanom a repeater pozícióját?
-
-✍️ *Kidolgozandó.*
-
-### Mi az adminisztrációs jelszó alapértelmezetten?
-
-✍️ *Kidolgozandó.*
-
-### Mi a jelszó egy room serverhez való csatlakozáshoz?
-
-✍️ *Kidolgozandó.*
-
-### Kinyerhető / beállítható a repeater privát kulcsa?
-
-✍️ *Kidolgozandó.*
-
-### Mit tegyek, ha a repeaterem public key-ének első bájtja ütközik egy másikéval?
-
-✍️ *Kidolgozandó.*
-
-### Mit tegyek, ha a repeaterem „süket" a közeli erős interferencia miatt?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan tehetem a repeateremet megfigyelővé (observer)?
-
-✍️ *Kidolgozandó.*
+1-byte-on: 64 ugrás
+2-byte-on: 32 ugrás
+3-byte-on: 24 ugrás
 
 ### Mi az a multibyte támogatás (1-2-3 bájtos advert és üzenet)?
 
-✍️ *Kidolgozandó — haladó téma, lásd az [eredeti szakaszt](https://docs.meshcore.io/faq/#39-q-what-is-multibyte-support-what-do-1-byte-2-byte-3-byte-adverts-and-messages-mean).*
-
-## 4. T-Deck és társai
-
-### Van felhasználói kézikönyv T-Deckhez, T-Pagerhez, T-Watch-hoz?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan tegyem a T-Decket DFU (firmware-frissítő) módba?
-
-✍️ *Kidolgozandó.*
-
-### Miért nincs műholdas (GPS) fix a T-Deckemen?
-
-✍️ *Kidolgozandó (a Plus és a sima T-Deck külön eset).*
-
-### Mekkora SD-kártyát támogat a T-Deck?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan kerülnek térképek a T-Deckre? Hová másoljam a csempéket?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan halkítható / testreszabható a hangjelzés?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan adhatok hozzá csomópontot kézzel (Import from Clipboard)?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan készítek képernyőképet a T-Decken?
-
-✍️ *Kidolgozandó.*
-
-## 5. Általános kérdések
-
-### Mit jelent a BW, SF és CR?
-
-✍️ *Kidolgozandó — a LoRa rádióparaméterek: sávszélesség (bandwidth),
-spreading factor és coding rate.*
-
-### A kliensek (companionök) ismételnek?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan talál útvonalat egy csomópont a célhoz? Miben más ez, mint a Meshtastic floodolása?
-
-✍️ *Kidolgozandó — ez a MeshCore egyik legfontosabb megkülönböztető képessége.*
-
-### Mindig floodolnak a publikus csatornák? És a privátok?
-
-✍️ *Kidolgozandó.*
-
-### Mi az alapértelmezett publikus csatorna kulcsa?
-
-✍️ *Kidolgozandó.*
+Haladó téma, lásd az [eredeti szakaszt](https://docs.meshcore.io/faq/#39-q-what-is-multibyte-support-what-do-1-byte-2-byte-3-byte-adverts-and-messages-mean).*
 
 ### Nyílt forráskódú a MeshCore?
 
 Igen, MIT licenc alatt: [github.com/meshcore-dev/meshcore](https://github.com/meshcore-dev/meshcore).
 
-### Hogyan támogathatom a MeshCore-t?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan fordíthatom le a firmware-t forrásból?
-
-✍️ *Kidolgozandó.*
-
-### Támogatja a MeshCore az ATAK-ot?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan kerülhet fel a csomópontom a [MeshCore térképre](https://map.meshcore.io)?
-
-✍️ *Kidolgozandó — a magyar térképhez lásd: [mc868.hu](https://mc868.hu).*
-
-### Van Windows/Mac kliensalkalmazás?
-
-✍️ *Kidolgozandó.*
-
-## 6. Hibaelhárítás
-
-### A kliensem szerint egy csomópont „sok-sok napja" volt utoljára látható
-
-✍️ *Kidolgozandó.*
-
-### Nem jelenik meg egy elvárt repeater/kliens/room server a listámban
-
-✍️ *Kidolgozandó.*
-
-### Hogyan csatlakozzak repeaterhez Bluetooth-on (BLE)?
-
-✍️ *Kidolgozandó.*
-
-### Nem látszik a companionöm Bluetooth-on / mi a párosítási kód?
-
-✍️ *Kidolgozandó.*
-
-### A Heltec V3 folyton bontja a Bluetooth-kapcsolatot
-
-✍️ *Kidolgozandó.*
-
-### Hogyan törölhetem teljesen a RAK/T1000-E/XIAO nRF52 eszközömet?
-
-✍️ *Kidolgozandó.*
-
-### A WebFlasher Linuxon „failed to open" hibát ad
-
-✍️ *Kidolgozandó.*
-
-## 7. Egyéb kérdések
-
-### Hogyan frissítsem az nRF-alapú eszközök firmware-ét OTA (DFU app)?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan frissítsem az ESP32-alapú eszközöket OTA?
-
-✍️ *Kidolgozandó.*
-
-### Hogyan csökkenthető a sikertelen OTA-frissítés esélye?
-
-✍️ *Kidolgozandó.*
-
-### Elérhető a MeshCore logó és betűtípus?
-
-✍️ *Kidolgozandó.*
-
 ### Mi a kontakt/csatorna QR-kód formátuma?
 
 Lásd: [QR-kódok](referencia/qr-kodok.md).
 
-### Hogyan csatlakozzak a companionhöz Wi-Fi-n (pl. Heltec V3)?
-
-✍️ *Kidolgozandó.*
-
 ### Mekkora adóteljesítményt állítsak a Station G2 / Heltec V4 / EByte E22 modulos rádiókon?
 
-✍️ *Kidolgozandó — fontos! A túl nagy beállított érték torzítást és
-„süketséget" okozhat.*
+Fontos! Magyarországon (és az EU-ban) maximum 27dBm adásteljesítmény lehetséges a 868-as sáv meshcore által használt szakaszán.
+Ebbe a 27dBm-be beleszámít az antenna nyeresége is! (X dBi = (X-2.25) dBm)
+Szóval nagyjából:
+SX1262-es adó 22dBm-el ad, rákötsz egy 6dBi-s antennát --> 22+(6-2,25)=25,75 -> legális!
+Egy erősítővel felszerelt eszközt (G2, HeltecV4 stb) úgy kell beállítani hogy maximum 27dBm legyen a számítás vége.

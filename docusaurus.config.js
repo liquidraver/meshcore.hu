@@ -126,7 +126,7 @@ const config = {
               },
               {
                 label: 'MeshCore hivatalos oldal',
-                href: 'https://meshcore.co.uk',
+                href: 'https://meshcore.io',
               },
               {
                 label: 'Oldal forráskódja',

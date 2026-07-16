@@ -1,7 +1,7 @@
 # MeshCore Magyarország — meshcore.hu
 
 [Docusaurus](https://docusaurus.io/) alapú dokumentációs oldal a magyar
-MeshCore közösségnek. Dizájn: a korábbi Hugo-téma színvilága és logói.
+MeshCore közösségnek.
 
 ## Tartalom szerkesztése (admin útmutató)
 
