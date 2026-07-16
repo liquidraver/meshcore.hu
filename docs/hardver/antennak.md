@@ -14,4 +14,6 @@ A jó antenna többet számít, mint az erős adó!
 - 868 MHz-re hangolt antennát használj
 - A magasság a legfontosabb: minél magasabban van az antenna, annál messzebbre látsz
 
-*(Ide jönnek később a közösség által bevált antennatípusok és beszerzési források.)*
+| Gyártó, típus | Felépítés | Nyereség | Mire jó |
+|---|---|---|---|
+| Gizont Lora Soft | hajlékony körsugárzó (20 és 40 cm kivitelek) | 1-2 dBi | Hordozható készülékekre |
