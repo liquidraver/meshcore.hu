@@ -6,7 +6,7 @@ description: A Companion firmware — a telefonodhoz csatlakozó kliens.
 
 # Companion firmware
 
-A **Companion** a leggyakoribb firmware-típus: az eszköz Bluetooth-on (vagy USB-n) csatlakozik a telefonodhoz, és a MeshCore alkalmazással üzenhetsz rajta keresztül.
+A **Companion** a leggyakoribb firmware-típus: az eszköz Bluetooth-on (vagy USB-n) csatlakozik a telefonodhoz/tabletedhez/számítógépedhez, és a MeshCore alkalmazással üzenhetsz rajta keresztül.
 
 ## Mikor válaszd?
 
