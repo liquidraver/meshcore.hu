@@ -23,4 +23,13 @@ A repeater döntése ("Illik a repeater régiói közé?") ennek alapján:
 Ennek a szűrésnek a lényege, hogy a régióhoz kötött forgalom csak az adott régió repeaterein keresztül terjedjen, ne terhelje feleslegesen a hálózat többi, más régióban lévő részét - miközben a globális (null scope) üzenetek minden repeateren szabadon átmennek.
 
 
-(A beállításokról itt fogunk majd leírást közölni.)
+## Beállítás
+
+**Repeater:**
+
+Lépj be az adminba, ott válaszd a Command Line lehetőséget, és vidd be ezeket a parancsokat:
+
+- region put hu
+- region save
+
+Minden parancs után meg kell várni az OK választ. Ha nem jön 20-30 másodpercen belül, ismételd meg a parancsot.
