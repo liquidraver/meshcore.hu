@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 title: Régiószűrés
-description: A Rágiószűrés alapjai egyszerűen
+description: A Régiószűrés alapjai egyszerűen
 ---
 
 <p align="center">
