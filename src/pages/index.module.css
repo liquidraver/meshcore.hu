@@ -38,6 +38,77 @@
   padding: 2rem 0 4rem;
 }
 
+/* Hírek doboz */
+.newsBox {
+  background: var(--ifm-card-background-color, #fff);
+  border: 1px solid var(--ifm-toc-border-color, #e0e0e0);
+  border-radius: 18px;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.newsTitle {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.15rem;
+}
+
+.newsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.newsItem {
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--ifm-toc-border-color, #e0e0e0);
+}
+
+.newsItem:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.newsItem:last-child {
+  padding-bottom: 0;
+}
+
+.newsLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.newsLink:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.newsLink:hover .newsItemTitle {
+  color: var(--ifm-color-primary);
+}
+
+.newsDate {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--ifm-color-content-secondary, var(--ifm-color-emphasis-600));
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.newsItemTitle {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  transition: color 160ms ease;
+}
+
+.newsText {
+  margin-bottom: 0;
+  color: var(--ifm-color-content-secondary, var(--ifm-color-emphasis-700));
+  font-size: 0.9rem;
+}
+
 .socialRow {
   margin-top: 2rem;
   text-align: center;
