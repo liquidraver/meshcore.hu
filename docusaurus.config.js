@@ -65,7 +65,7 @@ const config = {
             label: 'Dokumentáció',
           },
           {
-            href: 'https://mc868.hu',
+            href: 'https://map.meshcore.hu/',
             label: 'Élő térkép',
             position: 'right',
           },
@@ -121,8 +121,8 @@ const config = {
             title: 'Továbbiak',
             items: [
               {
-                label: 'Élő térkép (mc868.hu)',
-                href: 'https://mc868.hu',
+                label: 'Élő térkép (https://map.meshcore.hu/)',
+                href: 'https://map.meshcore.hu/',
               },
               {
                 label: 'MeshCore hivatalos oldal',
