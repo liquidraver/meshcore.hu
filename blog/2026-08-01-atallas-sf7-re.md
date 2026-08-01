@@ -9,8 +9,8 @@ magyar MeshCore gerinchálózat erre áll át.
 
 {/* truncate */}
 
-**Ha repeatert vagy companion eszközt üzemeltetsz, mindenképpen lépd meg** Az átállás napján,
-augusztus 8-án állítsd át az eszközödet SF7-re — a legegyszerűbb, ha a **"Netherlands"
+**Ha repeatert vagy companion eszközt üzemeltetsz, mindenképpen lépd meg**
+Az átállás napján, augusztus 8-án állítsd át az eszközödet SF7-re — a legegyszerűbb, ha a **"Netherlands"
 gyorsbeállítást** választod. Ha ezt elmulasztod, az eszközöd az átállás után nem fog tudni
 forgalmat bonyolítani a gerinchálózaton keresztül.
 
