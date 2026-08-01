@@ -1,9 +1,9 @@
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {usePluginData} from '@docusaurus/useGlobalData';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
-import news from '../data/news';
 import styles from './index.module.css';
 
 const cards = [
@@ -33,49 +33,30 @@ const cards = [
 ];
 
 const socials = [
-  {name: 'Telegram', href: 'https://t.me/meshcore_hu', icon: '/img/telegram.svg'},
-  {name: 'Discord', href: 'https://discord.gg/meshcore', icon: '/img/discord.svg'},
-  {name: 'Facebook', href: 'https://facebook.com/meshcore.hu', icon: '/img/facebook.svg'},
+  {name: 'Telegram', href: 'https://t.me/+T_a1IA5HyKY5OWE0', icon: '/img/telegram.svg'},
+  {name: 'Discord', href: 'https://discord.gg/F62aq2FTA', icon: '/img/discord.svg'},
+  {name: 'Facebook', href: 'https://www.facebook.com/groups/421299027712536', icon: '/img/facebook.svg'},
   {name: 'GitHub', href: 'https://github.com/meshcore-dev', icon: '/img/github.svg'},
-  {name: 'YouTube', href: 'https://youtube.com/@meshcore_hu', icon: '/img/youtube.svg'},
 ];
 
 function NewsBox() {
-  if (!news.length) {
+  const {items} = usePluginData('news-feed-plugin');
+  if (!items?.length) {
     return null;
   }
   return (
     <aside className={styles.newsBox}>
       <h2 className={styles.newsTitle}>📰 Hírek</h2>
       <ul className={styles.newsList}>
-        {news.map((item) => {
-          const body = (
-            <>
-              <time className={styles.newsDate}>{item.date}</time>
+        {items.slice(0, 3).map((item) => (
+          <li className={styles.newsItem} key={item.permalink}>
+            <Link className={styles.newsLink} to={item.permalink}>
+              <time className={styles.newsDate}>{item.formattedDate}</time>
               <h3 className={styles.newsItemTitle}>{item.title}</h3>
-              {item.text && <p className={styles.newsText}>{item.text}</p>}
-            </>
-          );
-          // Egyedi protokoll (pl. meshcore://) — sima <a>, hogy ne nyisson üres fület.
-          const isAppLink = item.href && !/^https?:/i.test(item.href);
-          return (
-            <li className={styles.newsItem} key={item.date + item.title}>
-              {item.to || item.href ? (
-                isAppLink ? (
-                  <a className={styles.newsLink} href={item.href}>
-                    {body}
-                  </a>
-                ) : (
-                  <Link className={styles.newsLink} to={item.to} href={item.href}>
-                    {body}
-                  </Link>
-                )
-              ) : (
-                body
-              )}
-            </li>
-          );
-        })}
+              {item.description && <p className={styles.newsText}>{item.description}</p>}
+            </Link>
+          </li>
+        ))}
       </ul>
     </aside>
   );

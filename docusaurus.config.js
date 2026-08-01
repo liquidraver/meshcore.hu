@@ -4,6 +4,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 
 const GITHUB_REPO = 'https://github.com/liquidraver/meshcore.hu';
+const NEWS_ROUTE_BASE_PATH = 'hirek';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -35,12 +36,21 @@ const config = {
           // "Oldal szerkesztése" link minden oldal alján
           editUrl: `${GITHUB_REPO}/tree/main/`,
         },
-        blog: false,
+        blog: {
+          routeBasePath: NEWS_ROUTE_BASE_PATH,
+          blogTitle: 'Hírek',
+          blogDescription: 'MeshCore Magyarország hírei',
+          showReadingTime: false,
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
       }),
     ],
+  ],
+
+  plugins: [
+    ['./src/plugins/news-feed', {routeBasePath: NEWS_ROUTE_BASE_PATH}],
   ],
 
   themeConfig:
@@ -63,6 +73,11 @@ const config = {
             sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Dokumentáció',
+          },
+          {
+            to: `/${NEWS_ROUTE_BASE_PATH}`,
+            label: 'Hírek',
+            position: 'left',
           },
           {
             href: 'https://map.meshcore.hu/',
@@ -101,19 +116,15 @@ const config = {
             items: [
               {
                 label: 'Telegram',
-                href: 'https://t.me/meshcore_hu',
+                href: 'https://t.me/+T_a1IA5HyKY5OWE0',
               },
               {
                 label: 'Discord',
-                href: 'https://discord.gg/meshcore',
+                href: 'https://discord.gg/F62aq2FTA',
               },
               {
                 label: 'Facebook',
-                href: 'https://facebook.com/meshcore.hu',
-              },
-              {
-                label: 'YouTube',
-                href: 'https://youtube.com/@meshcore_hu',
+                href: 'https://www.facebook.com/groups/421299027712536',
               },
             ],
           },
