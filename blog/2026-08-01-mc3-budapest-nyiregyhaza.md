@@ -19,7 +19,7 @@ gerincvonalként, hanem a környező térségek számára is valódi értéket n
 átjátszók közötti átlagos távolság így is közel 40 kilométer, ami jól mutatja a hálózat
 hatékonyságát és az egyes állomások teljesítményét.
 
-A **Kiskő-háti átjátszó** várhatóan augusztus 6-án kerül telepítésre. Feladata, hogy redundanciát
+A **Kis-kőháti átjátszó** várhatóan augusztus 6-án kerül telepítésre. Feladata, hogy redundanciát
 biztosítson az MC3 valamennyi átjátszója számára, ezzel tovább növelve az útvonal
 megbízhatóságát.
 
