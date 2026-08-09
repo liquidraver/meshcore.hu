@@ -32,9 +32,9 @@ A csatornák listájánál a következő csatornákra érdemes régiót beállí
 - #hungary
 - #debrecen
 
-Lépj be a csatornára, és jobb felül a 3 pontos menüben válaszd a "Set Region Scope" almenüt.
-Nyomd meg a "+" gombot, és írd be: hu
-A pipával mentsd el.
+1. Lépj be a csatornára, és jobb felül a 3 pontos menüben válaszd a "Set Region Scope" almenüt.
+2. Nyomd meg a "+" gombot, és írd be: hu
+3. A pipával mentsd el.
 
 **Repeater:**
 
