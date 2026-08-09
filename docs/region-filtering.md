@@ -25,6 +25,17 @@ Ennek a szűrésnek a lényege, hogy a régióhoz kötött forgalom csak az adot
 
 ## Beállítás
 
+**Companion:**
+
+A csatornák listájánál a következő csatornákra érdemes régiót beállítani:
+
+- #hungary
+- #debrecen
+
+Lépj be a csatornára, és jobb felül a 3 pontos menüben válaszd a "Set Region Scope" almenüt.
+Nyomd meg a "+" gombot, és írd be: hu
+A pipával mentsd el.
+
 **Repeater:**
 
 Lépj be az adminba, ott válaszd a Command Line lehetőséget, és vidd be ezeket a parancsokat:

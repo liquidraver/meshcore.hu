@@ -15,9 +15,15 @@ A **Companion** a leggyakoribb firmware-típus: az eszköz Bluetooth-on (vagy US
 
 ## Beállítás
 
-Az alap beállításokat követpen:
+Az alap beállításokat követően:
 
 Beállítások -> Kísérleti beállítások -> Alapértelmezett útvonal hash méret -> 2-byte a legördülő menüben, majd pipa a jobb felsőben
+
+## Régió és csatornák
+
+A [régiószűrés](/region-filtering.md) fontos lépés, hogy ne árasszuk el a környező országok hálózatait, ezért mindenképpen olvasd el a linket leírást.
+
+A nyilvános csevegésen kívül külön csatornákra is felcsatlakozhatsz (pl. helyi közösségi vagy vészhelyzeti hírek) — a jelenleg aktív [magyar csatornák](/magyar-csatornak.md) listáját itt találod.
 
 ## Tippek
 
