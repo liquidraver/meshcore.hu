@@ -6,7 +6,7 @@ description: A MeshCore KISS TNC/modem firmware soros protokollja.
 
 # KISS modem protokoll
 
-:::info Forrás
+:::info[Forrás]
 Fordítás alatt — az eredeti: [MeshCore KISS Modem Protocol](https://docs.meshcore.io/kiss_modem_protocol/) (MIT licenc).
 :::
 

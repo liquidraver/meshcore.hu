@@ -32,6 +32,36 @@ const cards = [
   },
 ];
 
+// Az első elem kiemelten, mindig a lista tetején jelenik meg (lásd RepeaterBox).
+const repeaterLinks = [
+  {
+    title: 'FONTOS DOLGOK, RÖVIDEN',
+    description: 'A legfontosabb tudnivalók repeater-üzemeltetőknek, egy oldalon.',
+    to: '/docs/fontos-dolgok-roviden',
+    pinned: true,
+  },
+  {
+    title: 'Repeater firmware',
+    description: 'Mikor érdemes repeatert telepíteni, és mik az alapbeállítások.',
+    to: '/docs/firmware/repeater',
+  },
+  {
+    title: 'Régiószűrés',
+    description: 'Hogyan döntik el a repeaterek, hogy továbbküldik-e a csomagot.',
+    to: '/docs/region-filtering',
+  },
+  {
+    title: 'Magyar csatornák',
+    description: 'A jelenleg aktív magyar csatornák és a hozzájuk tartozó régiók.',
+    to: '/docs/magyar-csatornak',
+  },
+  {
+    title: 'CLI parancsok',
+    description: 'A repeater adminban használható parancsok referenciája.',
+    to: '/docs/referencia/cli-parancsok',
+  },
+];
+
 const socials = [
   {name: 'Telegram', href: 'https://t.me/+T_a1IA5HyKY5OWE0', icon: '/img/telegram.svg'},
   {name: 'Discord', href: 'https://discord.gg/F62aq2FTA', icon: '/img/discord.svg'},
@@ -54,6 +84,26 @@ function NewsBox() {
               <time className={styles.newsDate}>{item.formattedDate}</time>
               <h3 className={styles.newsItemTitle}>{item.title}</h3>
               {item.description && <p className={styles.newsText}>{item.description}</p>}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
+}
+
+function RepeaterBox() {
+  return (
+    <aside className={styles.newsBox}>
+      <h2 className={styles.newsTitle}>📡 Repeater üzemeltetőknek</h2>
+      <ul className={styles.newsList}>
+        {repeaterLinks.map((item) => (
+          <li
+            className={item.pinned ? styles.pinnedItem : styles.newsItem}
+            key={item.to}>
+            <Link className={styles.newsLink} to={item.to}>
+              <h3 className={styles.newsItemTitle}>{item.title}</h3>
+              <p className={styles.newsText}>{item.description}</p>
             </Link>
           </li>
         ))}
@@ -98,10 +148,10 @@ export default function Home() {
         <section className={styles.cardsSection}>
           <div className="container">
             <div className="row">
-              <div className="col col--4 margin-bottom--lg">
+              <div className="col col--3 margin-bottom--lg">
                 <NewsBox />
               </div>
-              <div className="col col--8">
+              <div className="col col--6">
                 <div className="row">
                   {cards.map((card) => (
                     <div className="col col--6 margin-bottom--lg" key={card.to}>
@@ -112,6 +162,9 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+              </div>
+              <div className="col col--3 margin-bottom--lg">
+                <RepeaterBox />
               </div>
             </div>
             <div className={styles.socialRow}>

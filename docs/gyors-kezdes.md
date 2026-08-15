@@ -29,7 +29,7 @@ Haladóbb szintű, de önálló , telefon nélküli működésre képes eszköz:
 |---|---|---|
 | T-Deck | ~25 000 Ft | Billentyűzettel, önálló használatra |
 
-:::tip Fontos
+:::tip[Fontos]
 Magyarországon a **868 MHz-es** frekvenciasávot használjuk! Vásárláskor mindig a 868 MHz-es (EU868) változatot válaszd.
 :::
 

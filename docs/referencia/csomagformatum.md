@@ -6,7 +6,7 @@ description: A MeshCore rádiócsomagok bináris felépítése.
 
 # Csomagformátum
 
-:::info Forrás
+:::info[Forrás]
 Fordítás alatt — az eredeti: [Packet Format](https://docs.meshcore.io/packet_format/) (MIT licenc).
 :::
 

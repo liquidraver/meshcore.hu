@@ -6,7 +6,7 @@ description: Az egyes csomagtípusok tartalmának (payload) felépítése.
 
 # Payload-formátum
 
-:::info Forrás
+:::info[Forrás]
 Fordítás alatt — az eredeti: [Payload Format](https://docs.meshcore.io/payloads/) (MIT licenc).
 :::
 

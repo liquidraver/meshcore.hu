@@ -6,7 +6,7 @@ description: A telefonos alkalmazás és a Companion firmware közötti protokol
 
 # Companion protokoll
 
-:::info Forrás
+:::info[Forrás]
 Fordítás alatt — az eredeti: [Companion Protocol](https://docs.meshcore.io/companion_protocol/) (MIT licenc).
 :::
 

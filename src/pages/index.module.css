@@ -73,6 +73,22 @@
   padding-bottom: 0;
 }
 
+/* Kiemelt elem, ami mindig a doboz tetején marad (Repeater doboz első eleme). */
+.pinnedItem {
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 12px;
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.pinnedItem .newsItemTitle {
+  color: var(--ifm-color-primary);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
 .newsLink {
   display: block;
   color: inherit;

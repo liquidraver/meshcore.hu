@@ -6,7 +6,7 @@ description: A protokollban lefoglalt azonosítók és típuskódok jegyzéke.
 
 # Szám-kiosztások
 
-:::info Forrás
+:::info[Forrás]
 Fordítás alatt — az eredeti: [Number Allocations](https://docs.meshcore.io/number_allocations/) (MIT licenc).
 :::
 

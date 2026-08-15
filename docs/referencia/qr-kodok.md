@@ -6,7 +6,7 @@ description: A kontakt- és csatorna-QR-kódok formátuma.
 
 # QR-kódok
 
-:::info Forrás
+:::info[Forrás]
 Fordítás alatt — az eredeti: [QR Codes](https://docs.meshcore.io/qr_codes/) (MIT licenc).
 :::
 

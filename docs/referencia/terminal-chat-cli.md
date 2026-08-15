@@ -6,7 +6,7 @@ description: Parancssori chat-kliens MeshCore-hoz.
 
 # Terminal Chat CLI
 
-:::info Forrás
+:::info[Forrás]
 Fordítás alatt — az eredeti: [Terminal Chat CLI](https://docs.meshcore.io/terminal_chat_cli/) (MIT licenc).
 :::
 

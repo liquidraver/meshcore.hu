@@ -6,7 +6,7 @@ description: Az nRF52-alapú eszközök (RAK, T1000-E, XIAO) energiavédelmi fun
 
 # nRF52 energiagazdálkodás
 
-:::info Forrás
+:::info[Forrás]
 Fordítás alatt — az eredeti: [nRF52 Power Management](https://docs.meshcore.io/nrf52_power_management/) (MIT licenc).
 :::
 

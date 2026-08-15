@@ -6,7 +6,7 @@ description: A statisztika-lekérdezések bináris keretformátumai fejlesztőkn
 
 # Statisztika bináris keretek
 
-:::info Forrás
+:::info[Forrás]
 Fordítás alatt — az eredeti: [Stats Binary Frame Structures](https://docs.meshcore.io/stats_binary_frames/) (MIT licenc).
 :::
 

@@ -1,12 +1,12 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 title: GyIK
 description: Gyakran ismételt kérdések a MeshCore-ról — a hivatalos angol GyIK alapján.
 ---
 
 # Gyakran ismételt kérdések
 
-:::info Forrás
+:::info[Forrás]
 Ez az oldal a [hivatalos MeshCore GyIK](https://docs.meshcore.io/faq/) (MIT licenc)
 szerkezetét követi. A ✍️ jellel jelölt válaszok még kidolgozásra várnak — addig
 az angol eredeti a mérvadó.
