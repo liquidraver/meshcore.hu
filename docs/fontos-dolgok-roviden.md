@@ -9,15 +9,26 @@ description: A legfontosabb tudnivalók repeater-üzemeltetőknek — egy oldalo
 Ez az oldal a repeater-üzemeltetők számára gyűjti össze a legfontosabb tudnivalókat. Ha csak egy
 oldalt olvasol el, ez legyen az — a részletekért mindenhol ott a hivatkozás.
 
+Az oldalt **folyamatosan naprakészen tartjuk**: ahogy új firmware jelenik meg vagy változik a
+magyar hálózat beállítása, az itteni ajánlások is követik. Érdemes időnként visszanézni rá akkor
+is, ha az eszközöd már régóta megy.
+
 ## 1. Tartsd naprakészen a firmware-t
 
-A régi firmware nem csak a te eszközödet érinti — **az egész hálózatot visszafogja**:
+Ha régi firmware fut a repeatereden, azzal **nem csak magadnak ártasz**: a rajta áthaladó forgalmat
+a hálózat többi tagjától is elveszed. Néhány konkrét példa:
 
-- az 1.13-as és régebbi eszközök eldobják a több bájtos útvonal-hash értéket tartalmazó csomagokat,
-  így a `path.hash.mode 1` használatát is korlátozzák a hálózatban;
-- a hurokfelismerés (`loop.detect`) csak **1.14-től** létezik — enélkül egyetlen hibás szomszéd
-  csomagvihart tud okozni, amit az eszközöd tovább sokszoroz;
-- a kitöltési tényező százalékban (`dutycycle`) csak **1.15-től** állítható.
+- **1.14 előtt** a repeater csak az 1 bájtos útvonal-hasht ismeri, a hosszabbat tartalmazó
+  csomagokat pedig egyszerűen eldobja. Vagyis a `path.hash.mode 1`-re állított eszközök adásai
+  nem jutnak át rajta.
+- **1.14 előtt** nincs hurokfelismerés (`loop.detect`) sem. Elég egyetlen hibásan működő szomszéd
+  ahhoz, hogy csomagvihar induljon — a te eszközöd pedig ilyenkor tovább sokszorozza azt.
+- **1.15 előtt** a kitöltési tényezőt (`dutycycle`) nem tudod százalékban megadni, csak a
+  pontatlanabb `af` értékkel közelíteni.
+- **1.16 előtt** a preambulum minden spreading factornál 16 szimbólum. A magyar hálózaton használt
+  SF7-nél ez kevés: a vevőnek kevesebb ideje marad ráhangolódni a csomagra, így többet elszalaszt
+  belőlük. Az 1.16 SF8-ig automatikusan 32 szimbólumra vált — beállítani nem kell, de csak akkor
+  kapod meg, ha frissítesz.
 
 A jelenlegi verziót a `ver` paranccsal kérdezheted le. Frissíteni a hivatalos
 [webflasherrel](https://flasher.meshcore.io) tudsz (Web Serial API kell hozzá: asztali Chrome vagy

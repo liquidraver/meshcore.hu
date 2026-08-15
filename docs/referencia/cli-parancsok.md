@@ -9,8 +9,8 @@ description: A MeshCore repeater, room server és szenzor parancssori (CLI) para
 :::info[Forrás]
 A hivatalos [CLI Commands](https://docs.meshcore.io/cli_commands/) dokumentáció alapján
 ([meshcore-dev/MeshCore](https://github.com/meshcore-dev/MeshCore/blob/main/docs/cli_commands.md), MIT licenc).
-Az itt szereplő alapértelmezések az 1.15-ös firmware-re vonatkoznak — a te eszközödön eltérhetnek,
-ha korábbi verzióról frissítettél.
+Az oldal az **1.17.1-es** firmware-hez készült. Az alapértelmezések a *gyári* értékek: ha korábbi
+verzióról frissítettél, a saját beállításaid megmaradnak, tehát az eszközödön mást láthatsz.
 :::
 
 Ezekkel a parancsokkal a **repeater**, a **room server** és a **szenzor** firmware konfigurálható.
@@ -46,6 +46,12 @@ Minden parancs után várd meg az `OK` választ. Ha 20–30 másodpercen belül 
 | ⚠️ | Óvatosan — a hálózatot vagy az eszközt is elronthatod vele |
 | `1.14+` | Ettől a firmware-verziótól létezik |
 
+:::note[1.17: JSON konfiguráció]
+Az 1.17-es firmware frissítéskor automatikusan **JSON formátumra alakítja** az eszköz
+konfigurációját. A régi bináris beállításblokk megmarad, így szükség esetén vissza tudsz állni
+korábbi firmware-re.
+:::
+
 ---
 
 ## Üzemeltetés
@@ -62,6 +68,7 @@ Minden parancs után várd meg az `OK` választ. Ha 20–30 másodpercen belül 
 | `advert.zerohop` | Zero-hop advertet küld (csak a közvetlen szomszédoknak). |
 | `start ota` | Elindítja az OTA (vezeték nélküli) firmware-frissítést. |
 | `erase` | 🔌 ⚠️ Gyári visszaállítás — **minden beállítást és a kulcsot is törli**. |
+| `room.post <üzenet>` | `1.17+` Csak room serveren: a szerver saját nevében tesz közzé egy bejegyzést a szobában. Üres üzenetre `ERR empty message` a válasz. |
 
 ## Szomszédok (csak repeater)
 
@@ -111,8 +118,12 @@ Minden parancs után várd meg az `OK` választ. Ha 20–30 másodpercen belül 
 | `get tx` / `set tx <dbm>` | Adóteljesítmény 1–22 dBm között. ⚠️ Csak a LoRa chip szintjét állítja — ha az eszközben külön végfok is van, a tényleges kimenet ennél nagyobb. Túl magas érték **jogszabályt sérthet**. | boardfüggő |
 | `tempradio <freq>,<bw>,<sf>,<cr>,<timeout_mins>` | Ideiglenes rádióparaméterek a megadott percig. Nem mentődik, újraindításkor elveszik — teszteléshez ideális. | – |
 | `get radio.rxgain` / `set radio.rxgain <on\|off>` | `1.14.1+` Vételi „boosted gain” mód (SX12xx és LR1110). | `on` |
-| `get radio.fem.rxgain` / `set radio.fem.rxgain <on\|off>` | Külső LoRa FEM vételi erősítő (ahol a board támogatja). Ez **nem** ugyanaz, mint a `radio.rxgain`. | boardfüggő |
-| `get radio.fem.txgain` / `set radio.fem.txgain <on\|off>` | Külső LoRa FEM adóoldali erősítés. Station G3-on a PA PL1 jumpert el kell távolítani a szoftveres vezérléshez. | boardfüggő |
+| `get radio.fem.rxgain` / `set radio.fem.rxgain <on\|off>` | `1.17+` Külső LoRa FEM vételi erősítő (ahol a board támogatja). Ez **nem** ugyanaz, mint a `radio.rxgain`. | boardfüggő |
+| `get radio.fem.txgain` / `set radio.fem.txgain <on\|off>` | `1.17.1+` Külső LoRa FEM adóoldali erősítés (Station G3). A szoftveres vezérléshez a PA PL1 jumpert el kell távolítani. | boardfüggő |
+
+A **preambulum hosszát 1.16 óta nem kell (és nem is lehet) beállítani**: a firmware a spreading
+factor alapján választja meg — SF8-ig 32 szimbólum, fölötte 16. Az alacsonyabb SF-eknél (például a
+magyar hálózat SF7-én) a vevőnek így több ideje marad ráhangolódni a csomagra.
 
 :::warning[A rádióparaméterek hálózati beállítások]
 A `set radio` értékeit **ne találd ki magadtól** — a hálózat minden eszközének azonos beállításon kell lennie.
@@ -153,14 +164,14 @@ továbbít az eszközöd.
 | `get dutycycle` / `set dutycycle <1-100>` | `1.15+` Kitöltési tényező százalékban. `100` = nincs korlát, `1` = a legszigorúbb EU-előírás. | `50` |
 | `get af` / `set af <0-9>` | **Elavult** (1.15 óta) — helyette `dutycycle`. Adás után a rádió nagyjából az adásidő ennyiszeresét hallgat. | `1.0` |
 | `get int.thresh` / `set int.thresh <value>` | Helyi interferenciaküszöb. | `0.0` |
-| `get cad` / `set cad <on\|off>` | Hardveres csatornafigyelés (CAD) adás előtt: ha foglalt a csatorna, vár. Az `int.thresh`-től függetlenül működik. | `off` |
+| `get cad` / `set cad <on\|off>` | `1.17+` Hardveres csatornafigyelés (CAD) adás előtt: ha foglalt a csatorna, vár. Az `int.thresh`-től függetlenül működik. Korábbi lefagyások miatt alapból ki van kapcsolva. | `off` |
 | `get agc.reset.interval` / `set agc.reset.interval <value>` | AGC-nullázás időköze másodpercben, 4 többszörösére lefelé kerekítve. `0` = kikapcsolva. | `0.0` |
 | `get multi.acks` / `set multi.acks <0\|1>` | Multi-Ack támogatás. | `0` |
-| `get flood.advert.interval` / `set flood.advert.interval <3-168>` | Flood advert időköze órában. | `12` (szenzoron `0`) |
+| `get flood.advert.interval` / `set flood.advert.interval <3-168>` | Flood advert időköze órában. Az alapérték 1.16-ban 12-ről 47-re nőtt. | `47` (szenzoron `0`) |
 | `get advert.interval` / `set advert.interval <60-240>` | Zero-hop advert időköze percben, 2 többszörösére lefelé kerekítve. | `0` |
 | `get flood.max` / `set flood.max <0-64>` | Flood üzenetek maximális hopszáma. | `64` |
-| `get flood.max.unscoped` / `set flood.max.unscoped <0-64>` | Régió (scope) nélküli flood csomagok maximális hopszáma. | `64` |
-| `get flood.max.advert` / `set flood.max.advert <0-64>` | Advert floodok maximális hopszáma. | `8` |
+| `get flood.max.unscoped` / `set flood.max.unscoped <0-64>` | `1.16+` Régió (scope) nélküli flood csomagok maximális hopszáma. | `64` |
+| `get flood.max.advert` / `set flood.max.advert <0-64>` | `1.16+` Advert floodok maximális hopszáma. | `8` |
 
 #### Mit jelentenek a `loop.detect` szintek?
 
@@ -202,7 +213,7 @@ régió nélküli üzenetek még elmennek, a távoli zaj viszont nem terjed tov�
 | `region list <allowed\|denied>` | 🔌 `1.12+` Régiók listája jogosultság szerint. |
 | `region get <name\|*>` | Egy régió adatai. |
 | `region put <name> [parent_name]` | Új régió létrehozása. Szülő nélkül a `*` alá kerül. |
-| `region def <token> [<token>...]` | Teljes hierarchia egyetlen sorban (lásd lentebb). |
+| `region def <token> [<token>...]` | `1.16+` Teljes hierarchia egyetlen sorban (lásd lentebb). |
 | `region load [name] [F]` | Régiók tömeges betöltése. Név nélkül interaktív, ezért **távolról nem működik**. Az `F` engedélyezi a floodot, a behúzás szülő-gyerek kapcsolatot jelent (max. 8 szint). |
 | `region remove <name>` | Régió törlése. Előbb minden gyerekét törölni kell. |
 | `region allowf <name\|*>` | Flood engedélyezése a régióban. A `*`-ra állítva a régió (transport kód) nélküli csomagokat is átengedi. |
@@ -330,7 +341,7 @@ Csak akkor érhető el, ha a firmware bridge-támogatással készült.
 | `get bootloader.ver` | A bootloader verziója (csak nRF52). |
 | `get pwrmgt.support` | Van-e energiagazdálkodási támogatás. |
 | `get pwrmgt.source` | Az aktuális tápforrás. |
-| `get pwrmgt.bootreason` | A legutóbbi indítás és leállás oka. |
+| `get pwrmgt.bootreason` | A legutóbbi indítás és leállás oka. ESP32-es eszközökön `1.17+`. |
 | `get pwrmgt.bootmv` | A bekapcsoláskori feszültség. |
 
 A `pwrmgt.*` parancsok hibát adnak vissza olyan boardokon, amelyek nem támogatják az
