@@ -1,10 +1,10 @@
 ---
 sidebar_position: 8
-title: Szám-kiosztások
+title: Számkiosztások
 description: A protokollban lefoglalt azonosítók és típuskódok jegyzéke.
 ---
 
-# Szám-kiosztások
+# Számkiosztások
 
 :::info[Forrás]
 Fordítás alatt — az eredeti: [Number Allocations](https://docs.meshcore.io/number_allocations/) (MIT licenc).

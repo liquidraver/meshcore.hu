@@ -56,7 +56,7 @@ const repeaterLinks = [
     to: '/docs/magyar-csatornak',
   },
   {
-    title: 'CLI parancsok',
+    title: 'CLI-parancsok',
     description: 'A repeater adminban használható parancsok referenciája.',
     to: '/docs/referencia/cli-parancsok',
   },

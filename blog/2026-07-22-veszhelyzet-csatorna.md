@@ -1,10 +1,10 @@
 ---
 title: 'Elindult a #veszhelyzet csatorna'
-description: A csatorna az OKF VÉSZ alkalmazásának híreit küldi ki MeshCore-on. A csatornaüzenetek "hu" régióval vannak korlátozva.
+description: A csatorna az OKF VÉSZ alkalmazásának híreit küldi ki MeshCore-on. A csatornaüzenetek „hu” régióval vannak korlátozva.
 slug: veszhelyzet-csatorna
 ---
 
-A csatorna az OKF VÉSZ alkalmazásának híreit küldi ki MeshCore-on. A csatornaüzenetek "hu"
+A csatorna az OKF VÉSZ alkalmazásának híreit küldi ki MeshCore-on. A csatornaüzenetek „hu”
 régióval vannak korlátozva.
 
 {/* truncate */}

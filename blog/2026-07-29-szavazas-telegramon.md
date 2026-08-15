@@ -1,11 +1,11 @@
 ---
-title: Szavazás Telegram-on
-description: Teszteltük a "Netherlands" gyorsbeállításokat (SF7) és a hálózat átállításáról szavazás van kiírva a telegram-on.
+title: Szavazás Telegramon
+description: Teszteltük a „Netherlands” gyorsbeállításokat (SF7) és a hálózat átállításáról szavazás van kiírva a Telegramon.
 slug: szavazas-telegramon
 ---
 
-Teszteltük a "Netherlands" gyorsbeállításokat (SF7) és a hálózat átállításáról szavazás van
-kiírva a telegram-on.
+Teszteltük a „Netherlands” gyorsbeállításokat (SF7) és a hálózat átállításáról szavazás van
+kiírva a Telegramon.
 
 {/* truncate */}
 

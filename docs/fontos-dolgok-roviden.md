@@ -11,15 +11,15 @@ oldalt olvasol el, ez legyen az — a részletekért mindenhol ott a hivatkozás
 
 ## 1. Tartsd naprakészen a firmware-t
 
-A régi firmware nem csak neked hiányzik — **az egész hálózatot visszafogja**:
+A régi firmware nem csak a te eszközödet érinti — **az egész hálózatot visszafogja**:
 
-- az 1.13-as és régebbi eszközök eldobják a többbájtos útvonal-hash-t tartalmazó csomagokat, így a
-  `path.hash.mode 1` használatát is korlátozzák a hálózatban;
+- az 1.13-as és régebbi eszközök eldobják a több bájtos útvonal-hash értéket tartalmazó csomagokat,
+  így a `path.hash.mode 1` használatát is korlátozzák a hálózatban;
 - a hurokfelismerés (`loop.detect`) csak **1.14-től** létezik — enélkül egyetlen hibás szomszéd
   csomagvihart tud okozni, amit az eszközöd tovább sokszoroz;
 - a kitöltési tényező százalékban (`dutycycle`) csak **1.15-től** állítható.
 
-A jelenlegi verziót a `ver` paranccsal kérdezed le. Frissíteni a hivatalos
+A jelenlegi verziót a `ver` paranccsal kérdezheted le. Frissíteni a hivatalos
 [webflasherrel](https://flasher.meshcore.io) tudsz (Web Serial API kell hozzá: asztali Chrome vagy
 Edge), távolról pedig a `start ota` paranccsal.
 
@@ -32,15 +32,18 @@ Egy rosszul elhelyezett repeater **többet árt, mint használ**: fölöslegesen
 csomagokat, és lassítja a hálózatot. Telepítés előtt nézd meg az [élő térképet](https://map.meshcore.hu/#/map),
 és egyeztess a közösséggel a [Telegram csoportban](https://t.me/+T_a1IA5HyKY5OWE0).
 
-Jó helyszín: magas pont, jó rálátással nagy területre — tető, torony, hegy. Nem az a cél, hogy
+Ideális helyszín: magas pont, jó rálátással nagy területre — tető, torony, hegy. Nem az a cél, hogy
 minél kevesebb repeaterrel legyen meg az összeköttetés, hanem hogy útközben is legyen használható
 helyi lefedettség.
 
-## 3. „Hungary" gyorsbeállítás
+## 3. „Hungary” gyorsbeállítás
 
 A magyar hálózat **2026.08.08 óta SF7-en** üzemel. Az appban a Gyorsbeállítások (Preset) közül
-válaszd a **Hungary** opciót — ez állítja be a rádióparamétereket és a `hu` régiót is.
-Enélkül az eszközöd nem tud forgalmat bonyolítani a gerinchálózaton.
+válaszd a **Hungary** opciót — ez a rádióparamétereket állítja be. Enélkül az eszközöd nem tud
+forgalmat bonyolítani a gerinchálózaton.
+
+A `hu` régió **nem** ettől lesz beállítva, azt külön kell megadnod: repeateren a `region put hu`
+paranccsal (lásd a 4. pontot), companionon pedig csatornánként, a „Set Region Scope” menüben.
 
 Részletek: [Gyors kezdés](gyors-kezdes.md)
 
@@ -88,8 +91,8 @@ tényleges kimenő teljesítmény ennél nagyobb — ilyenkor a boardhoz tartoz�
 - Nézd meg a `stats-radio` és `stats-packets` kimenetét soros kapcsolaton, mielőtt felteszed a
   végleges helyére.
 - Ellenőrizd, hogy megjelentél-e az [élő térképen](https://map.meshcore.hu/#/live).
-- Frissítéskor az `erase` (gyári visszaállítás) **minden beállítást és a kulcsot is törli** — utána
-  az eszközöd új node-ként jelenik meg a hálózaton.
+- Az `erase` (gyári visszaállítás) **minden beállítást és a kulcsot is törli** — utána az eszközöd
+  új node-ként jelenik meg a hálózaton, ezért csak indokolt esetben használd.
 
 ## Gyors ellenőrzőlista
 
@@ -97,7 +100,7 @@ tényleges kimenő teljesítmény ennél nagyobb — ilyenkor a boardhoz tartoz�
 |---|---|
 | Legfrissebb firmware feltelepítve (`ver`) | ☐ |
 | Egyeztettem a közösséggel a helyszínről | ☐ |
-| „Hungary" preset beállítva (SF7) | ☐ |
+| „Hungary” preset beállítva (SF7) | ☐ |
 | `set path.hash.mode 1` | ☐ |
 | `set loop.detect moderate` | ☐ |
 | `region put hu` + `region save` | ☐ |

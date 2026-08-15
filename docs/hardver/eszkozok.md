@@ -22,5 +22,5 @@ Mindig a **868 MHz-es (EU868)** változatot vásárold!
 | T1000-E | nRF52840 | beépített | – | zsebben hordható, belső antennás |
 | Wio Tracker L1 Pro | nRF52840 | beépített | LCD | Kijelzős, nagy akksival, külső antennás |
 | Lilygo T-Echo | nRF52840 | beépített | E-ink | Kijelzős, kis-közepes akksival, külső antennás |
-| RAK WisMesh Tag | nRF52840 | beépített | - | Könnyen hordozható, de kisebb akksi és belső antenna |
-| XIAO nRF52840 & Wio-SX1262 Kit | nRF52840 | külső | - | repeaternek, hosszú üzemidő |
+| RAK WisMesh Tag | nRF52840 | beépített | – | Könnyen hordozható, de kisebb akksi és belső antenna |
+| XIAO nRF52840 & Wio-SX1262 Kit | nRF52840 | külső | – | repeaternek, hosszú üzemidő |

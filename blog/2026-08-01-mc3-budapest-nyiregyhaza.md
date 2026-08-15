@@ -6,7 +6,7 @@ slug: mc3-budapest-nyiregyhaza
 
 2026.07.31-én, pénteken két új átjátszó is telepítésre került: **HU-BAZ-Tiszakeszi** és
 **HU-HB-Hajdunanas**. Ezzel jelentős mérföldkőhöz érkeztünk: öt hónap leforgása alatt megvalósult
-a Budapestet és Nyíregyházát összekötő első keleti "MC3" gerinchálózati útvonal.
+a Budapestet és Nyíregyházát összekötő első keleti „MC3” gerinchálózati útvonal.
 
 ![Az MC3 gerinchálózat útvonala Budapest és Nyíregyháza között](/img/news/24958abe-60af-4aca-b96e-c81792f2e4a5.jpeg)
 

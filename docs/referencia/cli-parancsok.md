@@ -9,7 +9,7 @@ description: A MeshCore repeater, room server és szenzor parancssori (CLI) para
 :::info[Forrás]
 A hivatalos [CLI Commands](https://docs.meshcore.io/cli_commands/) dokumentáció alapján
 ([meshcore-dev/MeshCore](https://github.com/meshcore-dev/MeshCore/blob/main/docs/cli_commands.md), MIT licenc).
-Az itt szereplő alapértelmezések a 1.15-ös firmware-re vonatkoznak — a te eszközödön eltérhetnek,
+Az itt szereplő alapértelmezések az 1.15-ös firmware-re vonatkoznak — a te eszközödön eltérhetnek,
 ha korábbi verzióról frissítettél.
 :::
 
@@ -110,13 +110,13 @@ Minden parancs után várd meg az `OK` választ. Ha 20–30 másodpercen belül 
 | `get freq` / `set freq <frequency>` | 🔌 (csak a `set`) 🔄 Csak a frekvencia, MHz-ben. | `869.525` |
 | `get tx` / `set tx <dbm>` | Adóteljesítmény 1–22 dBm között. ⚠️ Csak a LoRa chip szintjét állítja — ha az eszközben külön végfok is van, a tényleges kimenet ennél nagyobb. Túl magas érték **jogszabályt sérthet**. | boardfüggő |
 | `tempradio <freq>,<bw>,<sf>,<cr>,<timeout_mins>` | Ideiglenes rádióparaméterek a megadott percig. Nem mentődik, újraindításkor elveszik — teszteléshez ideális. | – |
-| `get radio.rxgain` / `set radio.rxgain <on\|off>` | `1.14.1+` Vételi „boosted gain" mód (SX12xx és LR1110). | `on` |
+| `get radio.rxgain` / `set radio.rxgain <on\|off>` | `1.14.1+` Vételi „boosted gain” mód (SX12xx és LR1110). | `on` |
 | `get radio.fem.rxgain` / `set radio.fem.rxgain <on\|off>` | Külső LoRa FEM vételi erősítő (ahol a board támogatja). Ez **nem** ugyanaz, mint a `radio.rxgain`. | boardfüggő |
 | `get radio.fem.txgain` / `set radio.fem.txgain <on\|off>` | Külső LoRa FEM adóoldali erősítés. Station G3-on a PA PL1 jumpert el kell távolítani a szoftveres vezérléshez. | boardfüggő |
 
 :::warning[A rádióparaméterek hálózati beállítások]
 A `set radio` értékeit **ne találd ki magadtól** — a hálózat minden eszközének azonos beállításon kell lennie.
-A magyar hálózat a „Hungary" gyorsbeállítást használja, lásd a [gyors kezdés](../gyors-kezdes.md) oldalt.
+A magyar hálózat a „Hungary” gyorsbeállítást használja, lásd a [gyors kezdés](../gyors-kezdes.md) oldalt.
 :::
 
 ### Rendszer
@@ -126,7 +126,7 @@ A magyar hálózat a „Hungary" gyorsbeállítást használja, lásd a [gyors k
 | `get name` / `set name <name>` | Az eszköz neve. Az advertben legfeljebb 31 bájt fér el (pozícióval együtt 23), az ékezetek és emojik több bájtot foglalnak. A hosszabb nevek csonkolódnak. | boardfüggő |
 | `get lat` / `set lat <degrees>` | Földrajzi szélesség fokban. | `0` |
 | `get lon` / `set lon <degrees>` | Földrajzi hosszúság fokban. | `0` |
-| `get prv.key` / `set prv.key <private_key>` | 🔌 (csak a `get`) 🔄 ⚠️ Az eszköz identitása, 64 hexa karakter. Cserével az eszköz „új node" lesz a hálózaton. | – |
+| `get prv.key` / `set prv.key <private_key>` | 🔌 (csak a `get`) 🔄 ⚠️ Az eszköz identitása, 64 hexa karakter. Cserével az eszköz „új node” lesz a hálózaton. | – |
 | `password <new_password>` | Admin jelszó cseréje. A válasz visszaigazolásként visszaírja az új jelszót. Aki ezzel a jelszóval lép be, felkerül az admin ACL-listára. | `password` |
 | `get guest.password` / `set guest.password <password>` | Vendégjelszó (room servernél a szoba jelszava). | üres |
 | `get owner.info` / `set owner.info <text>` | `1.12+` Az üzemeltető elérhetősége. A `\|` karakterből sortörés lesz. | üres |
@@ -153,7 +153,7 @@ továbbít az eszközöd.
 | `get dutycycle` / `set dutycycle <1-100>` | `1.15+` Kitöltési tényező százalékban. `100` = nincs korlát, `1` = a legszigorúbb EU-előírás. | `50` |
 | `get af` / `set af <0-9>` | **Elavult** (1.15 óta) — helyette `dutycycle`. Adás után a rádió nagyjából az adásidő ennyiszeresét hallgat. | `1.0` |
 | `get int.thresh` / `set int.thresh <value>` | Helyi interferenciaküszöb. | `0.0` |
-| `get cad` / `set cad <on\|off>` | Hardveres csatornafigyelés (CAD) adás előtt: ha foglalt a csatorna, vár. A `int.thresh`-től függetlenül működik. | `off` |
+| `get cad` / `set cad <on\|off>` | Hardveres csatornafigyelés (CAD) adás előtt: ha foglalt a csatorna, vár. Az `int.thresh`-től függetlenül működik. | `off` |
 | `get agc.reset.interval` / `set agc.reset.interval <value>` | AGC-nullázás időköze másodpercben, 4 többszörösére lefelé kerekítve. `0` = kikapcsolva. | `0.0` |
 | `get multi.acks` / `set multi.acks <0\|1>` | Multi-Ack támogatás. | `0` |
 | `get flood.advert.interval` / `set flood.advert.interval <3-168>` | Flood advert időköze órában. | `12` (szenzoron `0`) |
@@ -174,7 +174,7 @@ A repeater megnézi, hányszor szerepel a saját azonosítója a csomag útvonal
 | `strict` | 1+ előfordulás | 1+ | 1+ |
 
 Egyetlen hibás (gyakran forkolt vagy egyedi) firmware is csomagvihart tud okozni, ha elrontja a
-csomag útvonalát, és az így keletkezett „új" csomag a maximális 64 hopig terjed. A magyar hálózaton
+csomag útvonalát, és az így keletkezett „új” csomag a maximális 64 hopig terjed. A magyar hálózaton
 ezért a `moderate` az ajánlott.
 
 #### `flood.max.unscoped` a `region denyf *` helyett
@@ -189,7 +189,7 @@ régió nélküli üzenetek még elmennek, a távoli zaj viszont nem terjed tov�
 |---|---|
 | `setperm <pubkey> <0-3>` | Jogosultság adása vagy módosítása: `0` = vendég, `1` = csak olvasás, `2` = írás-olvasás, `3` = admin. A jogosultság elhagyásával törli a bejegyzést. |
 | `get acl` | 🔌 Az aktuális ACL-lista. |
-| `get allow.read.only` / `set allow.read.only <on\|off>` | Room server „csak olvasható" mód — üzenőfalként való használathoz. Alap: `off` |
+| `get allow.read.only` / `set allow.read.only <on\|off>` | Room server „csak olvasható” mód — üzenőfalként való használathoz. Alap: `off` |
 
 ### Régiókezelés
 
@@ -207,7 +207,7 @@ régió nélküli üzenetek még elmennek, a távoli zaj viszont nem terjed tov�
 | `region remove <name>` | Régió törlése. Előbb minden gyerekét törölni kell. |
 | `region allowf <name\|*>` | Flood engedélyezése a régióban. A `*`-ra állítva a régió (transport kód) nélküli csomagokat is átengedi. |
 | `region denyf <name\|*>` | Flood tiltása. A `*`-ra állítva eldobja a régió nélküli csomagokat. |
-| `region home [name]` | Az eszköz saját („home") régiója. |
+| `region home [name]` | Az eszköz saját („home”) régiója. |
 | `region default [name\|<null>]` | Az alapértelmezett scope régió. `<null>` törli. |
 | `region save` | ⚠️ **Elmenti a változtatásokat.** Enélkül újraindításkor minden elveszik. |
 
@@ -248,7 +248,7 @@ region save
 - A `region def` **nem törli** a meglévő fát: ha a név már létezik, csak a szülője változik.
 - Hiba esetén a válasz `Err - ...`, de a hiba előtt létrehozott régiók az eszközön maradnak. Ellenőrizd a
   `region` paranccsal, majd javítsd `region remove` / `region put` parancsokkal.
-- Minden token legfeljebb egyszer hasad a `\|` mentén — a `region def a\|b\|c\|d` **nem** lapos lista.
+- Minden token legfeljebb egyszer hasad a `|` mentén — a `region def a|b|c|d` **nem** lapos lista.
 :::
 
 #### `region load` példák
@@ -286,7 +286,7 @@ region load
 region save
 ```
 
-Az `F` elhagyásával a `*` régió létrejön, de nem enged floodot — ez a „semleges" alapállapot.
+Az `F` elhagyásával a `*` régió létrejön, de nem enged floodot — ez a „semleges” alapállapot.
 
 ### GPS
 
@@ -295,8 +295,8 @@ Csak akkor érhető el, ha a firmware GPS-támogatással készült.
 | Parancs | Mit csinál | Alapérték |
 |---|---|---|
 | `gps` / `gps <on\|off>` | GPS hardver állapota, illetve be- és kikapcsolása. Bekapcsolva a válasz formája: `on, {active\|deactivated}, {fix\|no fix}, {sat count} sats`. | `off` |
-| `gps sync` | Óra szinkronizálása a GPS idejével. |  |
-| `gps setloc` | Az eszköz pozíciójának beállítása a GPS koordinátáiból. |  |
+| `gps sync` | Óra szinkronizálása a GPS idejével. | – |
+| `gps setloc` | Az eszköz pozíciójának beállítása a GPS koordinátáiból. | – |
 | `gps advert [none\|share\|prefs]` | Mi kerüljön az advertbe: `none` = semmi, `share` = a GPS pozíciója, `prefs` = a `lat`/`lon` beállítás. | `prefs` |
 
 ### Szenzorok

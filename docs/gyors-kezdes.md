@@ -24,7 +24,8 @@ A legnépszerűbb belépő szintű eszközök (részletek a [Hardver](hardver/es
 | Heltec V3 | ~6 000 Ft | Olcsó, kijelzős |
 | XIAO nRF52840 & Wio-SX1262 Kit | ~4 000 Ft | Kiváló energiahatékonyság |
 
-Haladóbb szintű, de önálló , telefon nélküli működésre képes eszköz:
+Haladóbb szintű, de önálló, telefon nélküli működésre képes eszköz:
+
 | Eszköz | Ár (kb.) | Megjegyzés |
 |---|---|---|
 | T-Deck | ~25 000 Ft | Billentyűzettel, önálló használatra |
@@ -39,22 +40,22 @@ Magyarországon a **868 MHz-es** frekvenciasávot használjuk! Vásárláskor mi
 2. Csatlakoztasd az eszközt USB-n
 3. Válaszd ki az eszköztípust és a **Companion Bluetooth** firmware-t
 4. Nyomd meg a DFU mód gombot
-5. Első telepítésnél érdemes az "erase flash"-el kezdeni
+5. Első telepítésnél érdemes az „erase flash” opcióval kezdeni
 6. Kattints a *Flash* gombra
 
 ## 3. Telepítsd az alkalmazást
 
 - **Android:** [MeshCore a Play Áruházban](https://play.google.com/store/apps/details?id=com.liamcottle.meshcore.android)
 - **iOS:** [MeshCore az App Store-ban](https://apps.apple.com/app/meshcore/id6742354151)
-- **Windows, macOS, Linux** [Telepítőfájlok](https://files.liamcottle.net/MeshCore/v1.47.0/)
-- Webalkalmazás (telepítés nélkül használható): https://app.meshcore.nz/
+- **Windows, macOS, Linux:** [Telepítőfájlok](https://files.liamcottle.net/MeshCore/v1.47.0/)
+- **Webalkalmazás** (telepítés nélkül használható): https://app.meshcore.nz/
 
 ## 4. Csatlakozz és küldj üzenetet
 
 1. Nyisd meg az appot, párosítsd az eszközt Bluetooth-on
 2. Állítsd be a nevedet
-3. Ellenőrizd a Gyorsbeállításokat (Preset): Hungary — ez állítja be a [régiószűrésnél](region-filtering.md) használt "hu" régiót
-4. Beállítások -> Kísérleti beállítások -> Alapértelmezett útvonal hash méret -> 2-byte a legördülő menüben, majd pipa a jobb felsőben
+3. Ellenőrizd a Gyorsbeállításokat (Preset): Hungary — ez a rádióparamétereket állítja be. A [régiószűrésnél](region-filtering.md) használt „hu” régiót ettől függetlenül, csatornánként kell beállítanod
+4. Beállítások → Kísérleti beállítások → Alapértelmezett útvonal hash méret → 2-byte a legördülő menüben, majd pipa a jobb felsőben
 5. Küldd el az első üzenetedet a publikus csatornán! 👋
 6. Vedd fel a [#hungary](meshcore://channel/add?name=%23hungary&secret=d2ad7e4009b727fb4ee5c1ff51694e5e) csatornát a helyi közösségi chateléshez — a többi aktív [magyar csatornáról](magyar-csatornak.md) is ott olvashatsz
 

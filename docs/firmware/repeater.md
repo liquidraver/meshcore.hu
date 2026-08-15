@@ -26,6 +26,6 @@ Lépj be az adminba, válaszd a Command Line lehetőséget, és vidd be ezeket a
 - set path.hash.mode 1
 - set loop.detect moderate
 
-Minden parancs után meg kell várni az OK választ. Ha nem jön 20-30 másodpercen belül, ismételd meg a parancsot.
+Minden parancs után meg kell várni az OK választ. Ha nem jön 20–30 másodpercen belül, ismételd meg a parancsot.
 
-A [régió beállításokat](/region-filtering.md) itt találod, azt is állítsd be!
+A [régióbeállításokat](/region-filtering.md) itt találod, azt is állítsd be!
