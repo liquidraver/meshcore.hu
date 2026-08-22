@@ -17,7 +17,7 @@ A **Companion** a leggyakoribb firmware-típus: az eszköz Bluetooth-on (vagy US
 
 Az alap beállításokat követően:
 
-Beállítások → Kísérleti beállítások → Alapértelmezett útvonal hash méret → 2-byte a legördülő menüben, majd pipa a jobb felsőben
+Beállítások → Rádió beállítások → Alapértelmezett útvonal hash méret → 2-byte a legördülő menüben, majd pipa a jobb felsőben
 
 ## Régió és csatornák
 

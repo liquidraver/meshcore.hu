@@ -55,7 +55,7 @@ Magyarországon a **868 MHz-es** frekvenciasávot használjuk! Vásárláskor mi
 1. Nyisd meg az appot, párosítsd az eszközt Bluetooth-on
 2. Állítsd be a nevedet
 3. Ellenőrizd a Gyorsbeállításokat (Preset): Hungary — ez a rádióparamétereket állítja be. A [régiószűrésnél](region-filtering.md) használt „hu” régiót ettől függetlenül, csatornánként kell beállítanod
-4. Beállítások → Kísérleti beállítások → Alapértelmezett útvonal hash méret → 2-byte a legördülő menüben, majd pipa a jobb felsőben
+4. Beállítások → Rádió beállítások → Alapértelmezett útvonal hash méret → 2-byte a legördülő menüben, majd pipa a jobb felsőben
 5. Küldd el az első üzenetedet a publikus csatornán! 👋
 6. Vedd fel a [#hungary](meshcore://channel/add?name=%23hungary&secret=d2ad7e4009b727fb4ee5c1ff51694e5e) csatornát a helyi közösségi chateléshez — a többi aktív [magyar csatornáról](magyar-csatornak.md) is ott olvashatsz
 

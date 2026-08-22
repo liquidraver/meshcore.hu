@@ -36,6 +36,10 @@ A csatornák listájánál a következő csatornákra érdemes régiót beállí
 2. Nyomd meg a „+” gombot, és írd be: hu
 3. A pipával mentsd el.
 
+(Alternatívaként a Beállítások → Rádió beállítások → Default region mezőben globálisan is beállíthatod a
+„hu” régiót — ekkor minden csatornára automatikusan rákerül a scope. Ha ezt választod, a publikus
+csatornáról kézzel vedd le a régiót, hogy az globális (null scope) maradjon.)
+
 **Repeater:**
 
 Lépj be az adminba, ott válaszd a Command Line lehetőséget, és vidd be ezeket a parancsokat:
