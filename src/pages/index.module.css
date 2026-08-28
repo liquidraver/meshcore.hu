@@ -38,6 +38,117 @@
   padding: 2rem 0 4rem;
 }
 
+/* Rádióbeállítások popup */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.modalDialog {
+  position: relative;
+  width: 100%;
+  max-width: 27rem;
+  padding: 1.75rem 2rem;
+  border: 1px solid var(--ifm-toc-border-color, #e0e0e0);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.45);
+  text-align: left;
+}
+
+[data-theme='dark'] .modalDialog {
+  background: #111827;
+  border-color: rgba(148, 163, 184, 0.28);
+}
+
+.modalClose {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  color: var(--ifm-color-content-secondary, var(--ifm-color-emphasis-600));
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.modalClose:hover {
+  background: var(--ifm-color-emphasis-200, rgba(148, 163, 184, 0.18));
+  color: var(--ifm-color-primary);
+}
+
+.modalTitle {
+  margin: 0 2rem 1.1rem 0;
+  color: var(--ifm-color-primary);
+  font-size: 1.15rem;
+}
+
+.modalTable {
+  display: table;
+  width: 100%;
+  margin: 0 0 1.1rem;
+  border: none;
+  border-collapse: collapse;
+}
+
+.modalTable tr,
+.modalTable tr:nth-child(2n) {
+  background: transparent;
+}
+
+.modalTable th,
+.modalTable td {
+  padding: 0.8rem 0;
+  border: none;
+  border-bottom: 1px solid var(--ifm-toc-border-color, #e0e0e0);
+  background: transparent;
+  font-size: 0.95rem;
+  vertical-align: baseline;
+}
+
+.modalTable tr:last-child th,
+.modalTable tr:last-child td {
+  border-bottom: none;
+}
+
+.modalTable th {
+  text-align: left;
+  padding-right: 1rem;
+  font-weight: 500;
+  color: var(--ifm-color-content-secondary, var(--ifm-color-emphasis-700));
+}
+
+.modalTable td {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.modalFooter {
+  margin: 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--ifm-toc-border-color, #e0e0e0);
+  font-size: 0.9rem;
+  color: var(--ifm-color-content-secondary, var(--ifm-color-emphasis-700));
+}
+
 /* Hírek doboz */
 .newsBox {
   background: var(--ifm-card-background-color, #fff);

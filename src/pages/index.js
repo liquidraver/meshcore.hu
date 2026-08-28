@@ -1,3 +1,4 @@
+import {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {usePluginData} from '@docusaurus/useGlobalData';
@@ -62,6 +63,65 @@ const repeaterLinks = [
   },
 ];
 
+// A főoldali „Belevágok” gombsor melletti gomb ezt a listát mutatja meg.
+const radioSettings = [
+  {label: 'Frekvencia', value: '869.618 MHz'},
+  {label: 'SF (Spreading Factor)', value: '7'},
+  {label: 'CR (Coding Rate)', value: '5'},
+  {label: 'BW (Bandwidth)', value: '62.5 kHz'},
+  {label: 'Path size', value: '2 byte'},
+];
+
+function RadioSettingsModal({onClose}) {
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [onClose]);
+
+  return (
+    <div
+      className={styles.modalOverlay}
+      onClick={onClose}
+      role="presentation">
+      <div
+        className={styles.modalDialog}
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="radio-settings-title">
+        <button
+          type="button"
+          className={styles.modalClose}
+          onClick={onClose}
+          aria-label="Bezárás">
+          ×
+        </button>
+        <h2 id="radio-settings-title" className={styles.modalTitle}>
+          📻 Jelenlegi rádióbeállítások
+        </h2>
+        <table className={styles.modalTable}>
+          <tbody>
+            {radioSettings.map((row) => (
+              <tr key={row.label}>
+                <th scope="row">{row.label}</th>
+                <td>{row.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className={styles.modalFooter}>
+          Lásd még: <Link to="/docs/region-filtering">Régióbeállítások</Link>
+        </p>
+      </div>
+    </div>
+  );
+}
+
 const socials = [
   {name: 'Telegram', href: 'https://t.me/+T_a1IA5HyKY5OWE0', icon: '/img/telegram.svg'},
   {name: 'Discord', href: 'https://discord.gg/F62aq2FTA', icon: '/img/discord.svg'},
@@ -113,6 +173,7 @@ function RepeaterBox() {
 }
 
 function HomepageHeader() {
+  const [showRadioSettings, setShowRadioSettings] = useState(false);
   return (
     <header className={styles.heroBanner}>
       <div className="container">
@@ -133,8 +194,17 @@ function HomepageHeader() {
             href="https://map.meshcore.hu/#/live">
             Megnézem az élő térképet
           </Link>
+          <button
+            type="button"
+            className="button button--outline button--secondary button--lg"
+            onClick={() => setShowRadioSettings(true)}>
+            Rádióbeállítások 📻
+          </button>
         </div>
       </div>
+      {showRadioSettings && (
+        <RadioSettingsModal onClose={() => setShowRadioSettings(false)} />
+      )}
     </header>
   );
 }
