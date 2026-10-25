@@ -57,6 +57,11 @@ const repeaterLinks = [
     to: '/docs/magyar-csatornak',
   },
   {
+    title: 'Ajánlott szoftverek',
+    description: 'Általunk kipróbált és ajánlott firmwarek, appok és térképek.',
+    to: '/docs/ajanlott-szoftverek',
+  },
+  {
     title: 'CLI-parancsok',
     description: 'A repeater adminban használható parancsok referenciája.',
     to: '/docs/referencia/cli-parancsok',

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 title: GyIK
 description: Gyakran ismételt kérdések a MeshCore-ról — a hivatalos angol GyIK alapján.
 ---
