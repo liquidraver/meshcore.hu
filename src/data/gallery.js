@@ -40,4 +40,32 @@ export const galleryImages = [
     src: '/img/gallery/HU-VE-Veszprem.png',
     caption: 'HU-VE-Veszprem repeater',
   },
+  {
+    src: '/img/gallery/HU-FE-Csoka.png',
+    caption: 'HU-FE-Csoka repeater',
+  },
+  {
+    src: '/img/gallery/HU-FE-Meleghegy.png',
+    caption: 'HU-FE-Meleghegy repeater',
+  },
+  {
+    src: '/img/gallery/HU-ZA-Keszthely.png',
+    caption: 'HU-ZA-Keszthely repeater',
+  },
+  {
+    src: '/img/gallery/HU-VE-Somlo.png',
+    caption: 'HU-VE-Somlo repeater',
+  },
+  {
+    src: '/img/gallery/HU-VE-Varpalota.png',
+    caption: 'HU-VE-Varpalota repeater',
+  },
+  {
+    src: '/img/gallery/HU-SO-Zamardi.png',
+    caption: 'HU-SO-Zamardi repeater',
+  },
+  {
+    src: '/img/gallery/HU-FE-Fehervarcsurgo.png',
+    caption: 'HU-FE-Fehervarcsurgo repeater',
+  },
 ];
