@@ -5,6 +5,7 @@ import {usePluginData} from '@docusaurus/useGlobalData';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
+import {galleryImages} from '../data/gallery';
 import styles from './index.module.css';
 
 const cards = [
@@ -177,6 +178,83 @@ function RepeaterBox() {
   );
 }
 
+function Gallery() {
+  const count = galleryImages.length;
+  const [index, setIndex] = useState(0);
+
+  // A véletlen kezdőkép csak kliensen választódik, hogy ne legyen hydration eltérés.
+  useEffect(() => {
+    setIndex(Math.floor(Math.random() * count));
+  }, [count]);
+
+  if (!count) {
+    return null;
+  }
+
+  const prev = () => setIndex((i) => (i - 1 + count) % count);
+  const next = () => setIndex((i) => (i + 1) % count);
+  const onKeyDown = (e) => {
+    if (e.key === 'ArrowLeft') {
+      prev();
+    } else if (e.key === 'ArrowRight') {
+      next();
+    }
+  };
+  const image = galleryImages[index];
+
+  return (
+    <figure
+      className={styles.gallery}
+      onKeyDown={onKeyDown}
+      aria-roledescription="carousel"
+      aria-label="Képgaléria">
+      <div className={styles.galleryFrame}>
+        <img
+          className={styles.galleryImage}
+          src={image.src}
+          alt={image.alt ?? image.caption}
+        />
+        {count > 1 && (
+          <>
+            <button
+              type="button"
+              className={`${styles.galleryNav} ${styles.galleryPrev}`}
+              onClick={prev}
+              aria-label="Előző kép">
+              ‹
+            </button>
+            <button
+              type="button"
+              className={`${styles.galleryNav} ${styles.galleryNext}`}
+              onClick={next}
+              aria-label="Következő kép">
+              ›
+            </button>
+          </>
+        )}
+      </div>
+      <figcaption className={styles.galleryCaption}>
+        {image.caption}
+        {image.credit && <span className={styles.galleryCredit}>{image.credit}</span>}
+      </figcaption>
+      {count > 1 && (
+        <div className={styles.galleryDots}>
+          {galleryImages.map((img, i) => (
+            <button
+              type="button"
+              key={img.src}
+              className={i === index ? styles.galleryDotActive : styles.galleryDot}
+              onClick={() => setIndex(i)}
+              aria-label={`${i + 1}. kép`}
+              aria-current={i === index}
+            />
+          ))}
+        </div>
+      )}
+    </figure>
+  );
+}
+
 function HomepageHeader() {
   const [showRadioSettings, setShowRadioSettings] = useState(false);
   return (
@@ -237,6 +315,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                <Gallery />
               </div>
               <div className="col col--3 margin-bottom--lg">
                 <RepeaterBox />
