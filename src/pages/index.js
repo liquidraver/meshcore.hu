@@ -178,7 +178,7 @@ function RepeaterBox() {
   );
 }
 
-function GalleryLightbox({image, onClose, onPrev, onNext}) {
+function GalleryLightbox({image, multiple, onClose, onPrev, onNext}) {
   useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -205,6 +205,8 @@ function GalleryLightbox({image, onClose, onPrev, onNext}) {
           className={styles.lightboxImage}
           src={image.src}
           alt={image.alt ?? image.caption}
+          onClick={onClose}
+          title="Kattints a kicsinyítéshez"
         />
         <figcaption className={styles.lightboxCaption}>
           {image.caption}
@@ -218,6 +220,30 @@ function GalleryLightbox({image, onClose, onPrev, onNext}) {
         aria-label="Bezárás">
         ×
       </button>
+      {multiple && (
+        <>
+          <button
+            type="button"
+            className={`${styles.lightboxNav} ${styles.galleryPrev}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              onPrev();
+            }}
+            aria-label="Előző kép">
+            ‹
+          </button>
+          <button
+            type="button"
+            className={`${styles.lightboxNav} ${styles.galleryNext}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              onNext();
+            }}
+            aria-label="Következő kép">
+            ›
+          </button>
+        </>
+      )}
     </div>
   );
 }
@@ -301,6 +327,7 @@ function Gallery() {
       {zoomed && (
         <GalleryLightbox
           image={image}
+          multiple={count > 1}
           onClose={() => setZoomed(false)}
           onPrev={prev}
           onNext={next}
