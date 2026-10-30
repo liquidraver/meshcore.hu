@@ -178,9 +178,54 @@ function RepeaterBox() {
   );
 }
 
+function GalleryLightbox({image, onClose, onPrev, onNext}) {
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      } else if (e.key === 'ArrowLeft') {
+        onPrev();
+      } else if (e.key === 'ArrowRight') {
+        onNext();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [onClose, onPrev, onNext]);
+
+  return (
+    <div className={styles.lightbox} onClick={onClose} role="presentation">
+      <figure
+        className={styles.lightboxFigure}
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label={image.caption}>
+        <img
+          className={styles.lightboxImage}
+          src={image.src}
+          alt={image.alt ?? image.caption}
+        />
+        <figcaption className={styles.lightboxCaption}>
+          {image.caption}
+          {image.credit && <span className={styles.galleryCredit}>{image.credit}</span>}
+        </figcaption>
+      </figure>
+      <button
+        type="button"
+        className={styles.lightboxClose}
+        onClick={onClose}
+        aria-label="Bezárás">
+        ×
+      </button>
+    </div>
+  );
+}
+
 function Gallery() {
   const count = galleryImages.length;
   const [index, setIndex] = useState(0);
+  const [zoomed, setZoomed] = useState(false);
 
   // A véletlen kezdőkép csak kliensen választódik, hogy ne legyen hydration eltérés.
   useEffect(() => {
@@ -213,6 +258,8 @@ function Gallery() {
           className={styles.galleryImage}
           src={image.src}
           alt={image.alt ?? image.caption}
+          onClick={() => setZoomed(true)}
+          title="Kattints a nagyításhoz"
         />
         {count > 1 && (
           <>
@@ -250,6 +297,14 @@ function Gallery() {
             />
           ))}
         </div>
+      )}
+      {zoomed && (
+        <GalleryLightbox
+          image={image}
+          onClose={() => setZoomed(false)}
+          onPrev={prev}
+          onNext={next}
+        />
       )}
     </figure>
   );

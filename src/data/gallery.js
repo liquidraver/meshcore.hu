@@ -9,63 +9,67 @@ export const galleryImages = [
     caption: 'HU-PE-NaszEye repeater - ezt látja most',
   },
   {
-    src: '/img/gallery/HU-HE-Sarud.png',
+    src: '/img/gallery/HU-HE-Sarud.jpeg',
     caption: 'HU-HE-Sarud repeater - lokális kiszolgálás és közvetlen link HU-HE-Kiskohat felé',
   },
   {
-    src: '/img/gallery/HU-BAZ-Tiszakeszi.png',
+    src: '/img/gallery/HU-BAZ-Tiszakeszi.jpeg',
     caption: 'HU-BAZ-Tiszakeszi repeater',
   },
   {
-    src: '/img/gallery/HU-HB-Hajdunanas.png',
+    src: '/img/gallery/HU-HB-Hajdunanas.jpeg',
     caption: 'HU-HB-Hajdunanas repeater',
   },
   {
-    src: '/img/gallery/HU-HE-Kiskohat.png',
+    src: '/img/gallery/HU-HE-Kiskohat.jpeg',
     caption: 'HU-HE-Kiskohat repeater',
   },
   {
-    src: '/img/gallery/HU-PE-Albertirsa.png',
+    src: '/img/gallery/HU-PE-Albertirsa.jpeg',
     caption: 'HU-PE-Albertirsa repeater',
   },
   {
-    src: '/img/gallery/HU-PE-Pilis.png',
+    src: '/img/gallery/HU-PE-Pilis.jpeg',
     caption: 'HU-PE-Pilis repeater',
   },
   {
-    src: '/img/gallery/HU-VE-HA2GY.png',
+    src: '/img/gallery/HU-VE-HA2GY.jpeg',
     caption: 'HU-VE-HA2GY repeater - a Gyulafirátóti Ifjúsági Rádióklub állomása',
   },
   {
-    src: '/img/gallery/HU-VE-Veszprem.png',
+    src: '/img/gallery/HU-VE-Veszprem.jpeg',
     caption: 'HU-VE-Veszprem repeater',
   },
   {
-    src: '/img/gallery/HU-FE-Csoka.png',
+    src: '/img/gallery/HU-FE-Csoka.jpeg',
     caption: 'HU-FE-Csoka repeater',
   },
   {
-    src: '/img/gallery/HU-FE-Meleghegy.png',
+    src: '/img/gallery/HU-FE-Meleghegy.jpeg',
     caption: 'HU-FE-Meleghegy repeater',
   },
   {
-    src: '/img/gallery/HU-ZA-Keszthely.png',
+    src: '/img/gallery/HU-ZA-Keszthely.jpeg',
     caption: 'HU-ZA-Keszthely repeater',
   },
   {
-    src: '/img/gallery/HU-VE-Somlo.png',
+    src: '/img/gallery/HU-VE-Somlo.jpeg',
     caption: 'HU-VE-Somlo repeater',
   },
   {
-    src: '/img/gallery/HU-VE-Varpalota.png',
+    src: '/img/gallery/HU-VE-Varpalota.jpeg',
     caption: 'HU-VE-Varpalota repeater',
   },
   {
-    src: '/img/gallery/HU-SO-Zamardi.png',
+    src: '/img/gallery/HU-SO-Zamardi.jpeg',
     caption: 'HU-SO-Zamardi repeater',
   },
   {
-    src: '/img/gallery/HU-FE-Fehervarcsurgo.png',
+    src: '/img/gallery/HU-FE-Fehervarcsurgo.jpeg',
     caption: 'HU-FE-Fehervarcsurgo repeater',
+  },
+  {
+    src: '/img/gallery/HU-PE-Csovympus.jpeg',
+    caption: 'HU-PE-Csovympus repeater',
   },
 ];
