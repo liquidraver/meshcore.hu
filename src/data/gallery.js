@@ -72,4 +72,8 @@ export const galleryImages = [
     src: '/img/gallery/HU-PE-Csovympus.jpeg',
     caption: 'HU-PE-Csovympus repeater',
   },
+  {
+    src: '/img/gallery/HU-BP22-Budafok-RAK.jpeg',
+    caption: 'HU-BP22-Budafok-RAK repeater',
+  },
 ];
