@@ -76,4 +76,8 @@ export const galleryImages = [
     src: '/img/gallery/HU-BP22-Budafok-RAK.jpeg',
     caption: 'HU-BP22-Budafok-RAK repeater',
   },
+  {
+    src: '/img/gallery/HU-ZA-Heviz-N.jpeg',
+    caption: 'HU-ZA-Heviz N repeater',
+  },
 ];
