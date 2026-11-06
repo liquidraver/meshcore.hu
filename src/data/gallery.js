@@ -80,4 +80,8 @@ export const galleryImages = [
     src: '/img/gallery/HU-ZA-Heviz-N.jpeg',
     caption: 'HU-ZA-Heviz N repeater',
   },
+  {
+    src: '/img/gallery/HU-PE-Csomor.jpeg',
+    caption: 'HU-PE-Csömör🌲 repeater',
+  },
 ];
