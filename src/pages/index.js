@@ -128,6 +128,10 @@ function RadioSettingsModal({onClose}) {
   );
 }
 
+const partners = [
+  {name: 'IdőKép', href: 'https://www.idokep.hu', logo: '/img/partners/idokep.svg'},
+];
+
 const socials = [
   {name: 'Telegram', href: 'https://t.me/+T_a1IA5HyKY5OWE0', icon: '/img/telegram.svg'},
   {name: 'Discord', href: 'https://discord.gg/F62aq2FTA', icon: '/img/discord.svg'},
@@ -409,6 +413,16 @@ export default function Home() {
                 {socials.map((s) => (
                   <a key={s.name} href={s.href} title={s.name} target="_blank" rel="noopener noreferrer">
                     <img src={s.icon} alt={s.name} />
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className={styles.partnerRow}>
+              <p className={styles.socialTitle}>Partnereink</p>
+              <div className={styles.partnerList}>
+                {partners.map((p) => (
+                  <a key={p.name} href={p.href} title={p.name} target="_blank" rel="noopener noreferrer">
+                    <img src={p.logo} alt={p.name} />
                   </a>
                 ))}
               </div>

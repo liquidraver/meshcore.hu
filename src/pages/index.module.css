@@ -440,6 +440,41 @@
   text-transform: uppercase;
 }
 
+.partnerRow {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.partnerList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.partnerList a {
+  display: inline-flex;
+  opacity: 0.8;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.partnerList a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.partnerList img {
+  height: 3rem;
+  width: auto;
+  /* A logó fehér: világos témában sötétre színezzük */
+  filter: brightness(0) opacity(0.75);
+}
+
+[data-theme='dark'] .partnerList img {
+  filter: none;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 3rem 1rem 2rem;
